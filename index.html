@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Barry's Bus &mdash; Free Wi-Fi</title>
+<meta name="robots" content="noindex">
+<style>
+  :root{
+    --teal-dark:#0b3d3a;
+    --teal:#123c39;
+    --coral:#ff5a36;
+    --coral-dark:#e8491d;
+    --yellow:#ffc93c;
+    --cream:#fdf6e8;
+    --ink:#16211f;
+    --grey:#9aa6a3;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:linear-gradient(180deg,var(--teal-dark) 0%,var(--teal) 40%,#e8703a 100%);
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    color:var(--ink);
+  }
+  .wrap{
+    width:100%;
+    max-width:560px;
+    padding:0 0 32px;
+  }
+  .hero{
+    width:100%;
+    display:block;
+    background:#0b3d3a;
+  }
+  .card{
+    background:var(--cream);
+    margin:-28px 16px 0;
+    border-radius:20px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.25);
+    padding:24px 22px 20px;
+    position:relative;
+  }
+  h1{
+    font-size:22px;
+    margin:0 0 6px;
+    color:var(--teal-dark);
+  }
+  .sub{
+    margin:0 0 18px;
+    font-size:14.5px;
+    color:#4b5a57;
+    line-height:1.4;
+  }
+  .terms-box{
+    border:1px solid #e2d8c3;
+    background:#fffdf8;
+    border-radius:12px;
+    padding:14px 16px;
+    max-height:230px;
+    overflow-y:auto;
+    font-size:13.5px;
+    line-height:1.55;
+    color:#333;
+  }
+  .terms-box h2{
+    font-size:14px;
+    margin:14px 0 4px;
+    color:var(--teal-dark);
+  }
+  .terms-box h2:first-child{margin-top:0;}
+  .terms-box p{margin:0 0 8px;}
+  .agree-row{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    margin:18px 2px 4px;
+  }
+  .agree-row input[type="checkbox"]{
+    width:20px;height:20px;flex:0 0 20px;margin-top:2px;accent-color:var(--coral);
+  }
+  .agree-row label{
+    font-size:14px;
+    line-height:1.4;
+    color:var(--ink);
+  }
+  button#continueBtn{
+    width:100%;
+    margin-top:16px;
+    padding:15px 18px;
+    font-size:16px;
+    font-weight:700;
+    letter-spacing:0.3px;
+    border:none;
+    border-radius:12px;
+    background:var(--grey);
+    color:#fff;
+    cursor:not-allowed;
+    transition:background .15s ease, transform .05s ease;
+  }
+  button#continueBtn.active{
+    background:var(--coral);
+    cursor:pointer;
+  }
+  button#continueBtn.active:hover{background:var(--coral-dark);}
+  button#continueBtn.active:active{transform:scale(0.98);}
+  .status{
+    margin-top:14px;
+    font-size:13px;
+    text-align:center;
+    color:#4b5a57;
+    min-height:16px;
+  }
+  .footer-note{
+    text-align:center;
+    font-size:11.5px;
+    color:#fdf6e8;
+    opacity:0.75;
+    margin-top:18px;
+    padding:0 24px;
+  }
+  .success{
+    display:none;
+    text-align:center;
+    padding:10px 4px 2px;
+  }
+  .success h2{color:var(--teal-dark);font-size:19px;margin:0 0 8px;}
+  .success p{font-size:14px;color:#4b5a57;margin:0;}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <img class="hero" src="assets/barrys-bus-hero.svg" alt="Barry's Bus - Free Wi-Fi on board">
+
+  <div class="card">
+
+    <div id="formView">
+      <h1>Welcome aboard!</h1>
+      <p class="sub">Connect to complimentary Wi-Fi courtesy of Barry's Bus. Please review and accept the terms below to get online.</p>
+
+      <div class="terms-box" id="termsBox">
+        <h2>Terms of Use</h2>
+        <p>By using the Barry's Bus Wi-Fi network ("the Service"), you agree to the following terms. If you do not agree, please do not connect to the Service.</p>
+
+        <h2>1. Complimentary Service</h2>
+        <p>The Service is provided free of charge as a courtesy to passengers. It is offered on an "as-is" and "as-available" basis, with no guarantee of uninterrupted access, speed, or coverage. Connectivity may be limited or unavailable depending on route, location, and network conditions.</p>
+
+        <h2>2. Acceptable Use</h2>
+        <p>You agree to use the Service only for lawful purposes. You may not use the Service to transmit, access, or store any content that is illegal, harmful, threatening, abusive, defamatory, or infringes on the rights of others. You may not attempt to disrupt, damage, or gain unauthorized access to this network or any connected systems.</p>
+
+        <h2>3. No Warranty</h2>
+        <p>Barry's Bus makes no warranties, express or implied, regarding the Service, including but not limited to security, privacy, reliability, or fitness for a particular purpose. You use the Service entirely at your own risk.</p>
+
+        <h2>4. Limitation of Liability</h2>
+        <p>To the fullest extent permitted by law, Barry's Bus and its operators shall not be liable for any direct, indirect, incidental, or consequential damages arising from your use of, or inability to use, the Service &mdash; including loss of data, loss of business, or exposure to security threats.</p>
+
+        <h2>5. Monitoring &amp; Privacy</h2>
+        <p>Network usage may be monitored and logged to protect the security and performance of the Service and to comply with applicable law. Avoid transmitting sensitive personal or financial information over this public network. This is a shared, unencrypted public network; use a VPN if you require additional privacy.</p>
+
+        <h2>6. Age &amp; Consent</h2>
+        <p>By accepting these terms, you confirm that you are at least 18 years of age, or that you have the permission of a parent or guardian to use the Service.</p>
+
+        <h2>7. Changes</h2>
+        <p>Barry's Bus may update these terms at any time without prior notice. Continued use of the Service after changes constitutes acceptance of the revised terms.</p>
+
+        <h2>8. Contact</h2>
+        <p>Questions about these terms can be directed to Barry's Bus staff or via the contact details posted on board.</p>
+      </div>
+
+      <div class="agree-row">
+        <input type="checkbox" id="agreeCheck">
+        <label for="agreeCheck">I have read and agree to the Barry's Bus Wi-Fi Terms of Use.</label>
+      </div>
+
+      <button id="continueBtn" disabled>Continue to the Internet</button>
+      <div class="status" id="statusMsg"></div>
+    </div>
+
+    <div class="success" id="successView">
+      <h2>You're connected 🎉</h2>
+      <p>Thanks for riding with Barry's Bus. Redirecting you now&hellip;</p>
+    </div>
+
+  </div>
+
+  <p class="footer-note">Barry's Bus Wi-Fi is a complimentary service for passengers. Please be considerate of fellow riders' bandwidth. Safe travels!</p>
+</div>
+
+<script>
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  var paramObj = Object.fromEntries(params.entries());
+  console.log('[Barry\'s Bus splash] Query parameters received from router:', paramObj);
+
+  // Cradlepoint / CoovaChilli-style UAM parameters (documented at
+  // docs.cradlepoint.com: "Details on Using UAM Authentication for Your Hotspot").
+  var uamip   = params.get('uamip');
+  var uamport = params.get('uamport');
+
+  // Try every common name a router might use for "the page the user was
+  // originally trying to reach" so this works across firmware variants.
+  var destination =
+      params.get('userurl') ||
+      params.get('redirect') ||
+      params.get('dst') ||
+      params.get('target') ||
+      params.get('continue') ||
+      params.get('url') ||
+      null;
+
+  var checkbox   = document.getElementById('agreeCheck');
+  var button     = document.getElementById('continueBtn');
+  var statusMsg  = document.getElementById('statusMsg');
+  var formView   = document.getElementById('formView');
+  var successView= document.getElementById('successView');
+
+  checkbox.addEventListener('change', function(){
+    if(checkbox.checked){
+      button.disabled = false;
+      button.classList.add('active');
+    } else {
+      button.disabled = true;
+      button.classList.remove('active');
+    }
+  });
+
+  button.addEventListener('click', function(){
+    if(!checkbox.checked) return;
+
+    formView.style.display = 'none';
+    successView.style.display = 'block';
+
+    setTimeout(function(){
+      if(uamip && uamport){
+        // Standard Cradlepoint/CoovaChilli local logon endpoint. Marks this
+        // client's session authenticated on the router, then the router's
+        // own "Redirection on Successful Authentication" setting takes over
+        // (set that to "To the URL the user intended to visit" on the router).
+        var logonUrl = 'http://' + uamip + ':' + uamport + '/logon';
+        if(destination){
+          logonUrl += '?userurl=' + encodeURIComponent(destination);
+        }
+        window.location.href = logonUrl;
+      } else if(destination){
+        // No uamip/uamport supplied, but we do have a destination URL
+        // (e.g. router configured for "administrator-defined" redirect
+        // that still forwarded the original target) — go there directly.
+        window.location.href = destination;
+      } else {
+        // No router parameters detected at all — most likely this page was
+        // opened directly for testing, not through the Cradlepoint captive
+        // portal. Nothing more to do.
+        statusMsg.textContent = "";
+        successView.querySelector('p').textContent =
+          "You're all set. You can close this tab and start browsing.";
+      }
+    }, 700);
+  });
+})();
+</script>
+
+</body>
+</html>
