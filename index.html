@@ -5,7 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <title>Barry's Bus &mdash; Free Wi-Fi</title>
 <meta name="robots" content="noindex">
-<style>
+<script>
+(function () {
+  if (window.top === window.self) return;           // only when inside the router's frame
+  function fit() {
+    var landscape = screen.orientation && screen.orientation.type.indexOf('landscape') === 0;
+    var deviceW = landscape ? Math.max(screen.width, screen.height)
+                            : Math.min(screen.width, screen.height);
+    var z = window.innerWidth / deviceW;            // e.g. 980 / 390 ≈ 2.5 on iPhone
+    document.documentElement.style.zoom = (deviceW < 768 && z > 1.2) ? z : '';
+  }
+  fit();
+  window.addEventListener('resize', fit);
+})();
+</script>
+  <style>
   :root{
     --teal-dark:#0b3d3a;
     --teal:#123c39;
